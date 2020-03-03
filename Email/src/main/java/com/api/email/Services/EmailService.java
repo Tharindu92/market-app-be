@@ -138,7 +138,6 @@ public class EmailService {
             // convert to char and display it
             sb.append((char) content);
         }
-        System.out.println(sb);
 
 //        CertPath certPath = cf.generateCertPath(new ByteArrayInputStream(sb.toString().getBytes()));
 

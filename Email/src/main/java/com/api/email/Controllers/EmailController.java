@@ -21,8 +21,10 @@ public class EmailController {
     @RequestMapping(method = RequestMethod.POST, value = "/send")
     public String createPayment(@RequestBody Email email) throws DocumentException, MessagingException, IOException, CertificateException {
         System.out.println(email);
-//        emailService.sendEmail(email);
-        emailService.sendEmailWithAttachment(email);
+        if(email.isAttached())
+            emailService.sendEmailWithAttachment(email);
+        else
+            emailService.sendEmail(email);
         return "Success";
     }
 }
